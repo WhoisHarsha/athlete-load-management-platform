@@ -1,0 +1,28 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+env/
+venv/
+.venv
+
+# Jupyter
+.ipynb_checkpoints
+
+# Data
+*.csv
+*.xlsx
+*.json
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Credentials
+.env
+config.ini
