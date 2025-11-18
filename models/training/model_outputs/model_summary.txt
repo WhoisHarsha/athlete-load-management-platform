@@ -1,0 +1,29 @@
+================================================================================
+INJURY RISK PREDICTION MODEL - SUMMARY REPORT
+================================================================================
+
+Training Date: 2024-11-17
+Total Samples: 5000
+Training Samples: 4000
+Test Samples: 1000
+Number of Features: 32
+Class Balance: 1180 injuries (23.60%), 3820 no injury
+
+RANDOM FOREST PERFORMANCE:
+ROC-AUC: 0.5053
+CV ROC-AUC: 0.5583 (+/- 0.0147)
+
+XGBOOST PERFORMANCE:
+ROC-AUC: 0.4977
+
+TOP 10 FEATURES:
+muscle_soreness_level: 0.0832
+fatigue_score: 0.0819
+sleep_fatigue_interaction: 0.0809
+sleep_quality_score: 0.0781
+acwr_fatigue_interaction: 0.0767
+acute_chronic_workload_ratio: 0.0745
+training_monotony: 0.0743
+history_recency_interaction: 0.0663
+previous_injury_severity_avg: 0.0635
+days_since_last_injury: 0.0471
