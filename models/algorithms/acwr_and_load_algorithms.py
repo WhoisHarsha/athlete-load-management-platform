@@ -221,18 +221,13 @@ class SpikeDetector:
         return result
 
 
-# =============================================================================
-# ALGORITHM 4: LOAD AGGREGATION
-# =============================================================================
-# Time Complexity: O(n log n) for resampling
-# =============================================================================
+# Algorithm 5: Load Aggregation
 
 class LoadAggregator:
     """
     Flexible load aggregation across time windows.
     
-    Supports: daily, weekly, monthly, custom periods
-    Multiple metrics: sum, mean, max, std, count
+    Supports custom time periods with multiple metrics (sum, mean, max, std, count)
     """
     
     @staticmethod
@@ -252,54 +247,23 @@ class LoadAggregator:
         4. Resample to target period
         5. Apply aggregation functions
         
-        Args:
-            df: Input DataFrame
-            period: Aggregation period ('daily', 'weekly', 'monthly', etc.)
-            metrics: List of aggregation functions
+        Specified input:
             group_by_athlete: Whether to group by athlete
-            
-        Returns:
-            Aggregated DataFrame
-            
-        Time Complexity: O(n log n) for resampling
         """
-        period_map = {
-            'daily': 'D',
-            'weekly': 'W',
-            'biweekly': '2W',
-            'monthly': 'M',
-            'quarterly': 'Q'
-        }
-        
+        period_map = {'daily': 'D', 'weekly': 'W', 'biweekly': '2W', 'monthly': 'M', 'quarterly': 'Q'}
         freq = period_map.get(period, period)
-        
         result = df.copy()
         result['date'] = pd.to_datetime(result['date'])
-        
         if group_by_athlete:
-            aggregated = (
-                result.set_index('date')
-                .groupby('athlete_id')['session_load']
-                .resample(freq)
-                .agg(metrics)
-                .reset_index()
-            )
+            aggregated = (result.set_index('date').groupby('athlete_id')['session_load'].resample(freq).agg(metrics).reset_index())
         else:
-            aggregated = (
-                result.set_index('date')['session_load']
-                .resample(freq)
-                .agg(metrics)
-                .reset_index()
-            )
-        
-        # Add time period identifiers
+            aggregated = (result.set_index('date')['session_load'].resample(freq).agg(metrics).reset_index())
         if freq == 'W':
             aggregated['week_number'] = aggregated['date'].dt.isocalendar().week
             aggregated['year'] = aggregated['date'].dt.year
         elif freq == 'M':
             aggregated['month'] = aggregated['date'].dt.month
             aggregated['year'] = aggregated['date'].dt.year
-        
         return aggregated
 
 
