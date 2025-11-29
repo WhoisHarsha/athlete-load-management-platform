@@ -2,9 +2,8 @@ DROP TABLE IF EXISTS training_sessions CASCADE;
 DROP TABLE IF EXISTS performance_metrics CASCADE;
 DROP TABLE IF EXISTS load_calculations CASCADE;
 
--- ============================================================================
--- TRAINING SESSIONS TABLE
--- ============================================================================
+
+-- Training Sessions Table
 CREATE TABLE training_sessions (
     session_id VARCHAR(15) PRIMARY KEY,
     athlete_id VARCHAR(10) NOT NULL,
@@ -33,9 +32,8 @@ CREATE INDEX idx_training_athlete ON training_sessions(athlete_id);
 CREATE INDEX idx_training_date ON training_sessions(session_date);
 CREATE INDEX idx_training_type ON training_sessions(session_type);
 
--- ============================================================================
--- PERFORMANCE METRICS TABLE
--- ============================================================================
+
+-- Performance Metrics Table
 CREATE TABLE performance_metrics (
     metric_id SERIAL PRIMARY KEY,
     session_id VARCHAR(15) NOT NULL UNIQUE,
@@ -69,9 +67,8 @@ CREATE TABLE performance_metrics (
 
 CREATE INDEX idx_perf_session ON performance_metrics(session_id);
 
--- ============================================================================
--- LOAD CALCULATIONS TABLE
--- ============================================================================
+
+-- Load Calculations Table
 CREATE TABLE load_calculations (
     load_id SERIAL PRIMARY KEY,
     session_id VARCHAR(15) NOT NULL UNIQUE,
