@@ -613,14 +613,7 @@ All load management algorithms based on peer-reviewed research:
 
 ---
 
-## ⚠️ Limitations & Future Work
-
-### Current Limitations
-- **Synthetic Data**: Generated data lacks real-world complexity
-- **Low Recall** (13%): Misses 87% of actual injuries
-- **Class Imbalance**: Only 23.6% of samples are injuries
-- **Limited Features**: Missing biomechanical, psychological data
-- **ROC-AUC ≈ 0.5**: Barely better than random chance
+##  Future Work
 
 ### Planned Improvements
 1. **Data Collection**: 
