@@ -715,9 +715,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
-- Northeastern University College of Engineering
+- Northeastern University - Khoury College of Computer Science
 - Sports science research community for validated metrics
 - Open source contributors (pandas, scikit-learn, PostgreSQL)
 
@@ -726,11 +726,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 **Harsha Prakash**
-- GitHub: [@harsha-prakash](https://github.com/harsha-prakash)
+- GitHub: [@harsha-prakash](https://github.com/WhoisHarsha)
 - Email: prakash.h@northeastern.edu
 
 **Samuel Greeman**  
-- GitHub: [@samuel-greeman](https://github.com/samuel-greeman)
+- GitHub: [@samuel-greeman](https://github.com/SamGreeman13)
 - Email: greeman.s@northeastern.edu
 
 ---
